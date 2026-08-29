@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#FFF0DC" rx="12"/>
+  <rect x="120" y="40" width="160" height="160" fill="#C8AAAA" rx="80"/>
+  <text x="200" y="120" text-anchor="middle" dominant-baseline="central" font-family="Andika, sans-serif" font-size="40" fill="#574964">🏆</text>
+  <rect x="100" y="230" width="200" height="12" fill="#9F8383" rx="6"/>
+  <rect x="130" y="256" width="140" height="8" fill="#B89E9E" rx="4"/>
+</svg>

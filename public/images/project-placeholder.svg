@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
+  <rect width="600" height="340" fill="#DCC5C5" rx="12"/>
+  <rect x="40" y="40" width="520" height="200" fill="#C8AAAA" rx="8"/>
+  <text x="300" y="150" text-anchor="middle" dominant-baseline="central" font-family="Andika, sans-serif" font-size="28" fill="#574964">Project Screenshot</text>
+  <rect x="40" y="270" width="160" height="12" fill="#9F8383" rx="6"/>
+  <rect x="40" y="296" width="260" height="8" fill="#B89E9E" rx="4"/>
+</svg>

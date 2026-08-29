@@ -1,0 +1,52 @@
+/* Tailwind CSS Directives
+   These three lines are required for Tailwind to work.
+   Tailwind replaces them at build time with actual CSS:
+   - base: CSS reset + normalizations (consistent look across browsers)
+   - components: reusable component patterns
+   - utilities: all the utility classes (bg-base, text-heading, p-4, flex, etc.) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base layer: global styles applied to HTML elements directly.
+   Using @layer base ensures these integrate properly with Tailwind's
+   cascade and don't accidentally override utility classes. */
+@layer base {
+  html {
+    /* Smooth scrolling: when clicking nav links, the page glides
+       to the target section instead of jumping instantly */
+    scroll-behavior: smooth;
+    /* Set Andika as the default font for the entire site */
+    font-family: 'Andika', sans-serif;
+    /* Use the body color as default text color */
+    color: #574964;
+    /* Use the base color as the page background */
+    background-color: #FFDAB3;
+  }
+
+  /* Remove default margins/padding for consistent spacing */
+  body {
+    margin: 0;
+    padding: 0;
+    /* Prevent horizontal scroll caused by animations or overflow */
+    overflow-x: hidden;
+  }
+
+  /* Ensure smooth scrolling works even when using keyboard navigation
+     or programmatic scrolling */
+  * {
+    scroll-margin-top: 80px; /* Offset for the fixed header height */
+  }
+}
+
+/* Custom utility for hiding scrollbar while keeping scroll functionality.
+   Useful for horizontal scroll containers. */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
