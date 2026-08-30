@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Calendar, MessageCircle, Send } from 'lucide-react';
+import { Mail, Phone, Calendar, MessageCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon} from './SocialIcons';
 import { personal } from '../data/personal';
 import { socials } from '../data/socials';
@@ -34,17 +33,6 @@ const socialIcons: Record<string, React.ReactNode> = {
 };
 
 export default function Contact() {
-  // Form state (optional contact form)
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Placeholder handler — replace with actual form submission logic
-    // (e.g., EmailJS, Formspree, or a serverless function)
-    console.log('Form submitted:', formData);
-    alert('Thank you for reaching out! This is a placeholder — connect a real form handler.');
-    setFormData({ name: '', email: '', message: '' });
-  };
 
   // Contact method definitions — each becomes a clickable card
   const contactMethods = [
