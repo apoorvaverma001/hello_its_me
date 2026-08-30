@@ -68,4 +68,15 @@ export const techStack: TechItem[] = [
     iconUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
   },
+  {
+    name: "OpenAI",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openapi/openapi-original.svg",
+  },
+  // {
+  //   name: "Kafka",
+  //   iconUrl:
+  //     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg",
+  // },
+
 ];

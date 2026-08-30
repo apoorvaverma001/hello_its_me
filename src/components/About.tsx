@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Download, Github, Instagram, Linkedin, Twitter, Target, Zap, AlertTriangle } from 'lucide-react';
+import { Download, Target, Zap, AlertTriangle } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon } from './SocialIcons';
 import { personal } from '../data/personal';
 import { socials } from '../data/socials';
 import { techStack } from '../data/techStack';
@@ -19,13 +20,13 @@ import { techStack } from '../data/techStack';
  * and shadow for visual separation from the background.
  */
 
-// Map social platform names to their lucide-react icons
-// This avoids hardcoding icons in the data file
+// Map social platform names to their custom SVG icons
+// lucide-react doesn't include brand logos, so we use our own inline SVGs
 const socialIcons: Record<string, React.ReactNode> = {
-  Github: <Github size={22} />,
-  Linkedin: <Linkedin size={22} />,
-  Twitter: <Twitter size={22} />,
-  Instagram: <Instagram size={22} />,
+  Github: <GithubIcon size={22} />,
+  Linkedin: <LinkedinIcon size={22} />,
+  Twitter: <TwitterIcon size={22} />,
+  Leetcode: <LeetcodeIcon size={22} />,
 };
 
 // Reusable card wrapper — keeps styling consistent across all sub-sections
@@ -72,11 +73,11 @@ export default function About() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-secondary/20 hover:bg-secondary/40 rounded-xl text-body transition-all duration-200 hover:scale-105"
+                    title={social.name}
+                    className="p-3 bg-secondary/20 hover:bg-secondary/40 rounded-xl text-body transition-all duration-200 hover:scale-110"
                     aria-label={`Visit ${social.name} profile`}
                   >
                     {socialIcons[social.icon]}
-                    <span className="text-sm font-bold">{social.name}</span>
                   </a>
                 ))}
               </div>

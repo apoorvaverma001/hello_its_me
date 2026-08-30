@@ -10,22 +10,22 @@ export interface Social {
 export const socials: Social[] = [
   {
     name: "GitHub",
-    url: "https://github.com/[YOUR_GITHUB_USERNAME]",
+    url: "https://github.com/apoorvaverma001",
     icon: "Github",
   },
   {
     name: "LinkedIn",
-    url: "[YOUR_LINKEDIN_URL]",
+    url: "https://www.linkedin.com/in/apoorva-verma001/",
     icon: "Linkedin",
   },
   {
-    name: "Twitter / X",
-    url: "[YOUR_TWITTER_URL]",
+    name: "X",
+    url: "https://x.com/apoorvaverma001",
     icon: "Twitter",
   },
   {
-    name: "Instagram",
-    url: "[YOUR_INSTAGRAM_URL]",
-    icon: "Instagram",
+    name: "Leetcode",
+    url: "https://leetcode.com/u/apoorvaverma001/",
+    icon: "Leetcode",
   },
 ];

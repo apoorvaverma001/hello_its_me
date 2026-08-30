@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Calendar, MessageCircle, Send, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Mail, Phone, Calendar, MessageCircle, Send } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon} from './SocialIcons';
 import { personal } from '../data/personal';
 import { socials } from '../data/socials';
 
@@ -24,12 +25,12 @@ import { socials } from '../data/socials';
  * visually distinguish it as an "action" area.
  */
 
-// Map social names to lucide icons
+// Map social names to custom SVG icons
 const socialIcons: Record<string, React.ReactNode> = {
-  Github: <Github size={20} />,
-  Linkedin: <Linkedin size={20} />,
-  Twitter: <Twitter size={20} />,
-  Instagram: <Instagram size={20} />,
+  Github: <GithubIcon size={20} />,
+  Linkedin: <LinkedinIcon size={20} />,
+  Twitter: <TwitterIcon size={20} />,
+  Leetcode: <LeetcodeIcon size={20} />,
 };
 
 export default function Contact() {
@@ -97,7 +98,7 @@ export default function Contact() {
           Have a project in mind, a question, or just want to say hi? Reach out through any of these channels.
         </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid gap-12">
           {/* Left Column: Contact Methods */}
           <div className="space-y-6">
             {/* Contact Method Cards */}
@@ -134,7 +135,7 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="p-6 bg-base-light/50 border border-secondary/30 rounded-2xl"
             >
-              <h3 className="text-heading font-bold text-lg mb-4">Follow Me</h3>
+              <h3 className="text-heading font-bold text-lg mb-4">Let's connect here</h3>
               <div className="flex flex-wrap gap-3">
                 {socials.map((social) => (
                   <a
@@ -151,78 +152,6 @@ export default function Contact() {
               </div>
             </motion.div>
           </div>
-
-          {/* Right Column: Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="p-6 bg-base-light/50 border border-secondary/30 rounded-2xl space-y-4"
-            >
-              <h3 className="text-heading font-bold text-lg mb-2">Send a Message</h3>
-
-              {/* Name Field */}
-              <div>
-                <label htmlFor="contact-name" className="block text-body/70 text-sm font-bold mb-1">
-                  Name
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="w-full px-4 py-3 bg-base border border-secondary/40 rounded-xl text-body text-sm focus:outline-none focus:ring-2 focus:ring-heading/50 transition-all"
-                  placeholder="Your name"
-                />
-              </div>
-
-              {/* Email Field */}
-              <div>
-                <label htmlFor="contact-email" className="block text-body/70 text-sm font-bold mb-1">
-                  Email
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="w-full px-4 py-3 bg-base border border-secondary/40 rounded-xl text-body text-sm focus:outline-none focus:ring-2 focus:ring-heading/50 transition-all"
-                  placeholder="you@example.com"
-                />
-              </div>
-
-              {/* Message Field */}
-              <div>
-                <label htmlFor="contact-message" className="block text-body/70 text-sm font-bold mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="contact-message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  rows={4}
-                  className="w-full px-4 py-3 bg-base border border-secondary/40 rounded-xl text-body text-sm focus:outline-none focus:ring-2 focus:ring-heading/50 transition-all resize-none"
-                  placeholder="Your message..."
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-heading hover:bg-heading-dark text-base-light rounded-xl font-bold transition-all duration-200 hover:scale-[1.02] shadow-md cursor-pointer"
-              >
-                <Send size={18} />
-                Send Message
-              </button>
-            </form>
-          </motion.div>
         </div>
       </div>
     </section>

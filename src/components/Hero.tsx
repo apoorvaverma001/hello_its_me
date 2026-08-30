@@ -66,7 +66,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-heading text-lg sm:text-xl mb-4 font-bold"
         >
-          Hello there 👋 I'm
+          Hello World, I'm
         </motion.p>
 
         {/* Name — fades in second (delay: 0.4s) */}

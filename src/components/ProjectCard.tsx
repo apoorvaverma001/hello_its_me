@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, ChevronDown } from 'lucide-react';
+import { ExternalLink, ChevronDown } from 'lucide-react';
+import { GithubIcon } from './SocialIcons';
 import type { Project } from '../data/projects';
 
 /**
@@ -72,7 +73,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="flex items-center gap-1.5 px-4 py-2 border border-heading text-heading hover:bg-heading hover:text-base-light rounded-lg text-sm font-bold transition-all duration-200 hover:scale-105"
             aria-label={`View GitHub repository of ${project.title}`}
           >
-            <Github size={14} />
+            <GithubIcon size={14} />
             GitHub
           </a>
         </div>

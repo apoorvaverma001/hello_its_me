@@ -5,14 +5,14 @@
 
 export const personal = {
   name: "Apoorva Verma",
-  jobTitle: "[YOUR_JOB_TITLE]",
-  company: "[YOUR_COMPANY]",
-  experienceYears: "[YOUR_EXPERIENCE_YEARS]",
+  jobTitle: "Software Developer👩🏻‍💻",
+  company: "Sasahyog Technologies",
+  experienceYears: "2+ years",
   aboutText:
     "[YOUR_ABOUT_TEXT] — Write a paragraph about yourself here. Describe your background, what you're passionate about, and what drives you as a developer.",
-  email: "[YOUR_EMAIL]",
-  phone: "[YOUR_PHONE]",
-  whatsapp: "[YOUR_WHATSAPP_NUMBER]",
+  email: "apoorva92verma@gmail.com",
+  phone: "6397437478",
+  whatsapp: "6397437478",
   calendarLink: "[YOUR_CALENDAR_LINK]",
   resumePath: "/resume/resume-placeholder.pdf",
   githubUsername: "[YOUR_GITHUB_USERNAME]",
