@@ -48,8 +48,7 @@ export default function Introduction() {
               {/* Decorative ring behind the image — creates a layered depth effect */}
               <div className="absolute inset-0 bg-secondary/30 rounded-full scale-110 blur-sm" />
               <img
-                src="/images/profile-placeholder.sv
-                g"
+                src="/images/profile-placeholder.svg"
                 alt={`Profile photo of ${personal.name}`}
                 className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-secondary shadow-xl"
               />
