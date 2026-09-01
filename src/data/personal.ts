@@ -15,7 +15,7 @@ export const personal = {
   whatsapp: "6397437478",
   calendarLink: "[YOUR_CALENDAR_LINK]",
   resumePath: "/resume/resume-placeholder.pdf",
-  githubUsername: "[YOUR_GITHUB_USERNAME]",
+  githubUsername: "apoorvaverma001",
 
   goals: [
     "[YOUR_GOAL_1] — e.g., Build scalable distributed systems",

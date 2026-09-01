@@ -28,4 +28,9 @@ export const socials: Social[] = [
     url: "https://leetcode.com/u/apoorvaverma001/",
     icon: "Leetcode",
   },
+  {
+    name: "Hackerrank",
+    url: "https://www.hackerrank.com/profile/apoorvaverma001",
+    icon: "Hackerrank",
+  },
 ];

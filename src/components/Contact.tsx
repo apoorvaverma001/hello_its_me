@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, Calendar, MessageCircle } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon} from './SocialIcons';
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon, HackerrankIcon} from './SocialIcons';
 import { personal } from '../data/personal';
 import { socials } from '../data/socials';
 
@@ -30,6 +30,7 @@ const socialIcons: Record<string, React.ReactNode> = {
   Linkedin: <LinkedinIcon size={20} />,
   Twitter: <TwitterIcon size={20} />,
   Leetcode: <LeetcodeIcon size={20} />,
+  Hackerrank: <HackerrankIcon size={20} />,
 };
 
 export default function Contact() {

@@ -42,7 +42,7 @@ const colorMap = {
     'bg-base-dark/60',
     'bg-base-dark/80',
     'bg-base-dark',
-  ],
+  ], 
 };
 
 // Generate placeholder contribution data

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Download, Target, Zap, AlertTriangle } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon, HackerrankIcon } from './SocialIcons';
 import { personal } from '../data/personal';
 import { socials } from '../data/socials';
 import { techStack } from '../data/techStack';
@@ -27,6 +27,7 @@ const socialIcons: Record<string, React.ReactNode> = {
   Linkedin: <LinkedinIcon size={22} />,
   Twitter: <TwitterIcon size={22} />,
   Leetcode: <LeetcodeIcon size={22} />,
+  Hackerrank: <HackerrankIcon size={22} />,
 };
 
 // Reusable card wrapper — keeps styling consistent across all sub-sections
