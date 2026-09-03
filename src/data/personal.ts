@@ -9,12 +9,12 @@ export const personal = {
   company: "Sasahyog Technologies",
   experienceYears: "2+ years",
   aboutText:
-    "[YOUR_ABOUT_TEXT] — Write a paragraph about yourself here. Describe your background, what you're passionate about, and what drives you as a developer.",
+    "A results-driven Software Developer with 2+ years of experience in designing, developing, and maintaining scalable software solutions. Skilled in Full-Stack Development, Database Management, and emerging AI technologies. Passionate about building innovative and user-centric applications that solve real-world problems.",
   email: "apoorva92verma@gmail.com",
   phone: "6397437478",
   whatsapp: "6397437478",
   calendarLink: "[YOUR_CALENDAR_LINK]",
-  resumePath: "/resume/resume-placeholder.pdf",
+  resumePath: "/resume/Software_Developer_Apoorva_Verma.pdf",
   githubUsername: "apoorvaverma001",
 
   goals: [

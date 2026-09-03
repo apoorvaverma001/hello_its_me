@@ -57,7 +57,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="text-heading text-3xl sm:text-4xl font-bold text-center mb-16"
         >
-          About Me
+          More About Me
         </motion.h2>
 
         <div className="space-y-8">

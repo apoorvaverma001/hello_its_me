@@ -12,19 +12,19 @@ export interface HackathonItem {
 export const hackathons: HackathonItem[] = [
   {
     name: "[EVENT_NAME_1] — e.g., HackMIT 2023",
-    image: "/images/pub2.png",
+    image: "/images/cisco.png",
     date: "2023",
     verifyUrl: "https://www.ijrte.org/portfolio-item/b70990711222/",
   },
   {
-    name: "[EVENT_NAME_2] — e.g., AWS Certified Solutions Architect",
-    image: "/images/cert-placeholder.svg",
-    date: "2023",
+    name: "Dextrix Hackathon 2.0",
+    image: "/images/hackcert.png",
+    date: "2019",
     verifyUrl: "#",
   },
   {
     name: "[EVENT_NAME_3] — e.g., Google Code Jam",
-    image: "/images/cert-placeholder.svg",
+    image: "/images/pub2.png",
     date: "2023",
     verifyUrl: "#",
   },

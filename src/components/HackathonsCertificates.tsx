@@ -133,7 +133,7 @@ export default function HackathonsCertificates() {
                         <img
                           src={item.image}
                           alt={`Certificate or badge for ${item.name}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-fill"
                           loading="lazy"
                         />
                       </div>

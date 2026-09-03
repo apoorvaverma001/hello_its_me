@@ -40,7 +40,7 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Tagline */}
           <p className="text-body/70 text-lg">
-            Made with <span className="text-red-400">❤️</span> and dark circles by{' '}
+            Made with <span className="text-body font-bold"> ⋆˙⟡ 🖥️ ⋆˙⟡ 🎧 ⋆˙⟡ 🤎 ⋆˙⟡ </span> by{' '}
             <span className="text-body font-bold">Apoorva Verma</span>
           </p>
 

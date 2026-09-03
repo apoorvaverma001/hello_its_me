@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, MapPin } from 'lucide-react';
+import { GraduationCap, BriefcaseBusiness } from 'lucide-react';
 import { experiences, education } from '../data/experience';
 
 /**
@@ -71,14 +71,22 @@ export default function Experience() {
                   {/* Header: Company + Date Range */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                     <h3 className="text-body font-bold text-lg flex items-center gap-2">
-                      <MapPin size={16} className="text-heading" />
+                      <BriefcaseBusiness size={16} className="text-heading" />
                       {exp.company}
                     </h3>
-                    <span className="text-heading text-sm font-bold">{exp.dateRange}</span>
+                   
+                    <span className="text-heading text-sm font-bold">{exp.dateRange} 
+                      {/* Job Location
+                  <p className="flex items-center gap 1"> <MapPin size={16} className="text-heading" /> Bareilly </p> */}
+                    </span>
                   </div>
 
+                  
+
                   {/* Job Title */}
-                  <p className="text-heading font-bold mb-3">{exp.jobTitle}</p>
+                  <p className="text-heading font-bold mb-1">{exp.jobTitle}</p>
+
+                  
 
                   {/* Responsibilities as bullet points */}
                   <ul className="space-y-2">
