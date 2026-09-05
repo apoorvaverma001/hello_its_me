@@ -1,9 +1,11 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Target, Zap, AlertTriangle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon, HackerrankIcon } from './SocialIcons';
 import { personal } from '../data/personal';
 import { socials } from '../data/socials';
-import { techStack } from '../data/techStack';
+import { techStack, techCategories, conceptItems } from '../data/techStack';
+import type { TechCategory } from '../data/techStack';
 
 /**
  * About Component — Comprehensive "about me" section
@@ -42,6 +44,125 @@ function Card({ children, className = '' }: { children: React.ReactNode; classNa
     >
       {children}
     </motion.div>
+  );
+}
+
+/** All tab labels including "All" */
+type TabLabel = "All" | TechCategory;
+const allTabs: TabLabel[] = ["All", ...techCategories];
+
+/**
+ * TechStackTabs — Tabbed tech stack with animated filtering
+ * 
+ * Tabs: All | Expertise | Frontend | Backend | AI & Data | Tools & DevOps | Concepts
+ * - "All" & category tabs show icon grids filtered by category
+ * - "Concepts" tab shows text-only chips (no icons)
+ * - Active tab has a sliding underline indicator
+ * - Content fades/slides in on tab change via AnimatePresence
+ */
+function TechStackTabs() {
+  const [activeTab, setActiveTab] = useState<TabLabel>("All");
+
+  // Filter tech items based on the active tab
+  const filteredTech =
+    activeTab === "All"
+      ? techStack
+      : activeTab === "Concepts"
+        ? [] // Concepts tab uses conceptItems, not techStack
+        : techStack.filter((t) => t.category.includes(activeTab as TechCategory));
+
+  const showConcepts = activeTab === "Concepts" || activeTab === "All";
+  const showTechGrid = activeTab !== "Concepts";
+
+  return (
+    <Card>
+      <h3 className="text-heading font-bold text-xl mb-6">Tech Stack</h3>
+
+      {/* Tab bar — horizontally scrollable on mobile */}
+      <div className="relative mb-8">
+        <div className="flex gap-1 overflow-x-auto pb-2 scrollbar-hide -mx-1 px-1">
+          {allTabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`relative px-4 py-2 text-sm font-semibold rounded-lg whitespace-nowrap transition-all duration-200
+                ${activeTab === tab
+                  ? 'text-heading bg-heading/10'
+                  : 'text-body/60 hover:text-body hover:bg-secondary/10'
+                }`}
+            >
+              {tab}
+              {/* Animated underline indicator */}
+              {activeTab === tab && (
+                <motion.div
+                  layoutId="tech-tab-indicator"
+                  className="absolute bottom-0 left-2 right-2 h-0.5 bg-heading rounded-full"
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
+        {/* Fade edge hint for scrollable tabs on mobile */}
+        <div className="absolute right-0 top-0 bottom-2 w-8 bg-gradient-to-l from-base-light/50 to-transparent pointer-events-none sm:hidden" />
+      </div>
+
+      {/* Animated tab content */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25, ease: 'easeOut' }}
+        >
+          {/* Icon grid for tech items */}
+          {showTechGrid && filteredTech.length > 0 && (
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+              {filteredTech.map((tech) => (
+                <motion.div
+                  key={tech.name}
+                  whileHover={{ scale: 1.1 }}
+                  className="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-secondary/20 transition-colors duration-200"
+                >
+                  <img
+                    src={tech.iconUrl}
+                    alt={`${tech.name} logo`}
+                    className="w-10 h-10 sm:w-12 sm:h-12"
+                    loading="lazy"
+                  />
+                  <span className="text-xs sm:text-sm text-body/70 text-center font-bold">
+                    {tech.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          )}
+
+          {/* Concepts chips (shown on Concepts tab or All tab) */}
+          {showConcepts && conceptItems.length > 0 && (
+            <div className={showTechGrid && filteredTech.length > 0 ? 'mt-8' : ''}>
+              {activeTab === "All" && (
+                <h4 className="text-body/60 text-sm font-semibold uppercase tracking-wider mb-4">
+                  Concepts & Methodologies
+                </h4>
+              )}
+              <div className="flex flex-wrap gap-2">
+                {conceptItems.map((concept) => (
+                  <motion.span
+                    key={concept}
+                    whileHover={{ scale: 1.05 }}
+                    className="px-4 py-2 bg-heading/10 text-body rounded-full text-sm font-semibold border border-heading/15 hover:bg-heading/20 transition-colors duration-200 cursor-default"
+                  >
+                    {concept}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </Card>
   );
 }
 
@@ -118,34 +239,8 @@ export default function About() {
             </ul>
           </Card>
 
-          {/* Row 3: Tech Stack (full width grid) */}
-          <Card>
-            <h3 className="text-heading font-bold text-xl mb-6">Tech Stack</h3>
-            {/* Responsive grid:
-                - 3 columns on mobile (small icons)
-                - 4 columns on sm (640px+)
-                - 6 columns on lg (1024px+)
-                This ensures icons don't get too cramped or too spread out */}
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
-              {techStack.map((tech) => (
-                <motion.div
-                  key={tech.name}
-                  whileHover={{ scale: 1.1 }}  // Slight zoom on hover for interactivity
-                  className="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-secondary/20 transition-colors duration-200"
-                >
-                  <img
-                    src={tech.iconUrl}
-                    alt={`${tech.name} logo`}
-                    className="w-10 h-10 sm:w-12 sm:h-12"
-                    loading="lazy"  // Lazy load: only loads when scrolled into view (performance)
-                  />
-                  <span className="text-xs sm:text-sm text-body/70 text-center font-bold">
-                    {tech.name}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </Card>
+          {/* Row 3: Tech Stack with category tabs */}
+          <TechStackTabs />
 
           {/* Row 4: Strengths + Weaknesses side by side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
