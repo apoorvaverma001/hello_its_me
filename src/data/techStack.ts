@@ -217,11 +217,10 @@ export const techStack: TechItem[] = [
  */
 export const conceptItems: string[] = [
   "REST APIs",
-  "GraphQL",
+  "System Design",
   "Microservices",
   "CI/CD",
   "Agile / Scrum",
-  "System Design",
   "Data Structures",
   "Algorithms",
   "OOP",
